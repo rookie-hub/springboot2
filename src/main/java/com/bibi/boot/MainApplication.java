@@ -19,11 +19,11 @@ public class MainApplication {
 
        /* //获取配置类中的Pet类实例对象
         Pet tom = run.getBean("tom", Pet.class);
-        System.out.println(tom);
+        System.out.println(tom);*/
 
         //获取配置类中的User类实例对象
         User user = run.getBean("toUser", User.class);
-        System.out.println(user);*/
+        System.out.println("=====" + user);
         int beanDefinitionCount = run.getBeanDefinitionCount();//获取容器的组件个数
         System.out.println(beanDefinitionCount);//129
         String[] beanNamesForType = run.getBeanNamesForType(WebMvcProperties.class);
