@@ -7,5 +7,20 @@
 </head>
 <body>
     <h1>欢迎页面====static</h1>
+    <h1>测试REST风格参数</h1>
+    <form action="/user" method="get">
+        <input value="REST———GET提交" type="submit"/>
+    </form>
+    <form action="/user" method="post">
+        <input value="REST———POST提交" type="submit"/>
+    </form>
+    <form action="/user" method="post">
+        <input type="hidden" name="_method" value="PUT"/>
+        <input value="REST———PUT提交" type="submit"/>
+    </form>
+    <form action="/user" method="post">
+        <input type="hidden" name="_method" value="DELETE" />
+        <input value="REST———DETELE提交" type="submit"/>
+    </form>
 </body>
 </html>
