@@ -5,6 +5,6 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     #type: com.zaxxer.hikari.HikariDataSource
-  jdbc:
-    template:
-      query-timeout: 3 # 超时时间为3秒
+#  jdbc:
+#    template:
+#      query-timeout: 3 # 超时时间为3秒
