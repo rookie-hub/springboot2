@@ -3,6 +3,8 @@ package com.springboot.springboot_web.contrller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,10 +43,14 @@ public class ParamTestController {
     }
 
     @PostMapping("/save")
-    public Map post(@RequestBody String content){
+    public Map post(@RequestBody String content) throws UnsupportedEncodingException {
         Map<String, Object> map = new HashMap<>();
-        map.put("content",content);
+
         System.out.println("前端页面中文==" + content);
+
+        String decode = URLDecoder.decode(content, "utf-8");
+        System.out.println("地址栏解决乱码后的参数" + decode);
+        map.put("content",decode);
         return map;
     }
 

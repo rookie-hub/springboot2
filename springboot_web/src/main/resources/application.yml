@@ -7,11 +7,13 @@ spring:
       filter:
         enabled: true # 开启页面表单的Rest功能
 
-server:
-  servlet:
-    encoding:
-      charset: utf-8
-      force: true
-      enabled: true
-  tomcat:
-    uri-encoding: utf-8
+#server:
+#  servlet:
+#    encoding:
+#      charset: utf-8 # HTTP请求和响应的字符集
+#      force: true # 是否强制对HTTP请求和响应上配置的字符集进行编码
+#      enabled: true # 是否启用http编码支持
+#      force-request: true # 是否强制对HTTP请求上配置的字符集进行编码。未指定“force”时默认为true
+#      force-response: true # 是否强制对HTTP响应上配置的字符集进行编码
+#  tomcat:
+#    uri-encoding: utf-8
