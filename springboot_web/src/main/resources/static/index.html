@@ -6,6 +6,28 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 </head>
 <body>
+
+    <h1>获取Cookie</h1>
+    <a href="/url/2/own/lisi?age=18&inters=bask&inters=game">请求参数中普通参数和list参数</a>
+
+    /cars/{path}?xxx=xxx&aaa=ccc queryString 查询字符串。@RequestParam；<br/>
+    /cars/sell;low=34;brand=byd,audi,yd  ；矩阵变量 <br/>
+    页面开发，cookie禁用了，session里面的内容怎么使用；<br/>
+    session.set(a,b)---> jsessionid ---> cookie ----> 每次发请求携带。<br/>
+    url重写：/abc;jsesssionid=xxxx 把cookie的值使用矩阵变量的方式进行传递.<br/><br/><br/>
+    <h1>矩阵变量</h1><br/>
+    <a href="/cars/sell;low=34;brand=byd,audi,yd">@MatrixVariable（矩阵变量）</a>
+    <a href="/cars/sell;low=34;brand=aaa;brand=bbb;brand=ccc">@MatrixVariable（矩阵变量）</a>
+    <a href="/boss/1;age=20/2;age=10">@MatrixVariable（矩阵变量）/boss/{bossId}/{empId}</a><br/>
+    <br/><br/>
+    <h1>请求体参数(POSt请求才有请求体内容)</h1>
+<!--    <form action="/save" method="post" accept-charset="utf-8" onsubmit="document.charset='utf-8'">-->
+    <form action="/save" method="post"  >
+        测试@RequestBody获取数据<br/>
+        用户名:<input name="username" /><br/>
+        邮箱: <input name="email"/><br/>
+        <input type="submit" value="提交">
+    </form>
     <h1>欢迎页面====static</h1>
     <h1>测试REST风格参数</h1>
     <form action="/user" method="get">
@@ -15,7 +37,7 @@
         <input value="REST———POST提交" type="submit"/>
     </form>
     <form action="/user" method="post">
-        <input type="hidden" name="_method" value="PUT"/>
+        <input type="hidden" name="_m" value="PUT"/>
         <input value="REST———PUT提交" type="submit"/>
     </form>
     <form action="/user" method="post">
